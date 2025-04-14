@@ -29,7 +29,6 @@ const usuarios = [
 ];
 usuarios.forEach((usuario) => biblioteca.adicionarUsuario(usuario));
 // Realizando 4 empréstimos
-// Realizando 4 empréstimos usando find()
 const emprestar = (tituloLivro, nomeUsuario) => {
     const livro = livros.find((Tl) => Tl.Titulo === tituloLivro);
     const usuario = usuarios.find((Nu) => Nu.Nome === nomeUsuario);
