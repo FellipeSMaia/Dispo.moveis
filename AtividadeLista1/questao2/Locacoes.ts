@@ -10,11 +10,14 @@ export class Locacao {
     this.filmesAlugados = filmes;
   }
 
+  // método para alugar filmes
   public alugarFilme(filme: Filme): void {
     this.filmesAlugados.push(filme);
     console.log(`Filme "${filme.Titulo}" alugado por ${this.cliente.Nome}.`);
   }
 
+
+  // método para exibir os filmes
   public exibirFilmesAlugados(): void {
     console.log(`Filmes alugados por ${this.cliente.Nome}:`);
     if (this.filmesAlugados.length === 0) {

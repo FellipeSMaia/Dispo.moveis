@@ -22,9 +22,4 @@ export class Livro {
         return this.anoPublicacao
     }
 
-
-    public toString(): string {
-        return `Titulo: ${this.titulo}\nAutor: ${this.autor}\nAno de Publicacão: ${this.anoPublicacao}`
-    }
-
 }

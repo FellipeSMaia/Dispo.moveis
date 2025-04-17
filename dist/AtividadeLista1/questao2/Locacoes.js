@@ -7,10 +7,12 @@ class Locacao {
         this.cliente = cliente;
         this.filmesAlugados = filmes;
     }
+    // método para alugar filmes
     alugarFilme(filme) {
         this.filmesAlugados.push(filme);
         console.log(`Filme "${filme.Titulo}" alugado por ${this.cliente.Nome}.`);
     }
+    // método para exibir os filmes
     exibirFilmesAlugados() {
         console.log(`Filmes alugados por ${this.cliente.Nome}:`);
         if (this.filmesAlugados.length === 0) {

@@ -5,10 +5,12 @@ export class Biblioteca {
   livros: Livro[] = [];
   usuarios: Usuario[] = [];
 
+  // método para adicionar livros em um array
   public adicionarLivro(livro: Livro) {
     this.livros.push(livro);
   }
 
+  // método para adicionar usuarios em um array
   public adicionarUsuario(usuario: Usuario) {
     this.usuarios.push(usuario);
   }

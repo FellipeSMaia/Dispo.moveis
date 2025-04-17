@@ -15,7 +15,4 @@ export class Usuario {
     return this.idade;
   }
 
-  public toString(): string {
-    return `Nome: ${this.nome}\nIdade: ${this.idade}`;
-  }
 }

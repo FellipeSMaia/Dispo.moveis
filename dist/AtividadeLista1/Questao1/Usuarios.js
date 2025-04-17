@@ -12,8 +12,5 @@ class Usuario {
     get Idade() {
         return this.idade;
     }
-    toString() {
-        return `Nome: ${this.nome}\nIdade: ${this.idade}`;
-    }
 }
 exports.Usuario = Usuario;

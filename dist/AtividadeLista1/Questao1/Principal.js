@@ -21,25 +21,15 @@ const livros = [
 livros.forEach((livro) => biblioteca.adicionarLivro(livro));
 // Adicionando 5 usuários
 const usuarios = [
-    new Usuarios_1.Usuario("Aline", 1),
-    new Usuarios_1.Usuario("Bruno", 2),
-    new Usuarios_1.Usuario("Carla", 3),
-    new Usuarios_1.Usuario("Daniel", 4),
-    new Usuarios_1.Usuario("Eduarda", 5),
+    new Usuarios_1.Usuario("Ana", 22),
+    new Usuarios_1.Usuario("Carlos", 30),
+    new Usuarios_1.Usuario("Beatriz", 18),
+    new Usuarios_1.Usuario("Daniel", 25),
+    new Usuarios_1.Usuario("Fernanda", 27),
 ];
 usuarios.forEach((usuario) => biblioteca.adicionarUsuario(usuario));
 // Realizando 4 empréstimos
-const emprestar = (tituloLivro, nomeUsuario) => {
-    const livro = livros.find((Tl) => Tl.Titulo === tituloLivro);
-    const usuario = usuarios.find((Nu) => Nu.Nome === nomeUsuario);
-    if (livro && usuario) {
-        biblioteca.emprestarLivro(livro, usuario);
-    }
-    else {
-        console.log(`Erro ao emprestar: Livro ou usuário não encontrado.`);
-    }
-};
-emprestar("1984", "Aline");
-emprestar("O Senhor dos Anéis", "Bruno");
-emprestar("Harry Potter", "Carla");
-emprestar("O Hobbit", "Daniel");
+biblioteca.emprestarLivro(livros[0], usuarios[0]);
+biblioteca.emprestarLivro(livros[3], usuarios[2]);
+biblioteca.emprestarLivro(livros[5], usuarios[1]);
+biblioteca.emprestarLivro(livros[9], usuarios[4]);

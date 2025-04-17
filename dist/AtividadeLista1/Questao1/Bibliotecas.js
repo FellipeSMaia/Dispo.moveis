@@ -6,9 +6,11 @@ class Biblioteca {
         this.livros = [];
         this.usuarios = [];
     }
+    // método para adicionar livros em um array
     adicionarLivro(livro) {
         this.livros.push(livro);
     }
+    // método para adicionar usuarios em um array
     adicionarUsuario(usuario) {
         this.usuarios.push(usuario);
     }

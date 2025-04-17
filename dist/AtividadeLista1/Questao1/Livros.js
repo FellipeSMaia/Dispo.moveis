@@ -16,8 +16,5 @@ class Livro {
     get AnoPublicacao() {
         return this.anoPublicacao;
     }
-    toString() {
-        return `Titulo: ${this.titulo}\nAutor: ${this.autor}\nAno de Publicacão: ${this.anoPublicacao}`;
-    }
 }
 exports.Livro = Livro;
