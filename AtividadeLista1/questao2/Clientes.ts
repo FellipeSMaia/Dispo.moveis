@@ -1,3 +1,5 @@
+// Aluno: Fellipe Souza Maia
+
 export class Cliente {
   private nome: string;
   private idade: Number;

@@ -1,3 +1,5 @@
+// Aluno: Fellipe Souza Maia
+
 export class Produto {
   private nome: string;
   private preco: number;
