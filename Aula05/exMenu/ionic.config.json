@@ -1,0 +1,7 @@
+{
+  "name": "exMenu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
