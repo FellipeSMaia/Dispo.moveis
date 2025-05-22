@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #form="ngForm" (ngSubmit)="salvar(form)">
+    <ion-item>
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="dados.nome" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" name="email" [(ngModel)]="dados.email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Mensagem</ion-label>
+      <ion-textarea name="mensagem" [(ngModel)]="dados.mensagem"></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disable]="!form.valid">Salvar</ion-button>
+
+  </form>
+</ion-content>

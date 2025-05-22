@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Menu Principal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button expand="block" routerLink="/formulario">Cadastrar Dados</ion-button>
+
+
+  <ion-button expand="block" (click)="irParaListagem()" [disabled]="!temDados">Listar Dados</ion-button>
+
+</ion-content>
