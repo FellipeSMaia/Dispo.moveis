@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tarefas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/nova-tarefa">+</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-card-tarefa *ngFor="let t of tarefas" [tarefa="t"]></app-card-tarefa>
+</ion-content>
