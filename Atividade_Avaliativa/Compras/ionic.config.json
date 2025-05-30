@@ -1,7 +1,0 @@
-{
-  "name": "Compras",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
