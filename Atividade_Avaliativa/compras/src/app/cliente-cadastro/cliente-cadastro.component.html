@@ -1,0 +1,190 @@
+<div class="cadastro-cliente-container">
+  <div class="header">
+    <h2>{{ isEdicao ? "Editar Dados do Cliente" : "Cadastro de Cliente" }}</h2>
+  </div>
+
+  <div *ngIf="carregando" class="loading">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
+  <form
+    [formGroup]="clienteForm"
+    (ngSubmit)="onSubmit()"
+    class="cliente-form"
+    *ngIf="!carregando"
+  >
+    <!-- Dados Pessoais -->
+    <div class="form-section">
+      <h3>Dados Pessoais</h3>
+
+      <!-- Nome -->
+      <div class="form-group">
+        <label for="nome">Nome Completo *</label>
+        <input
+          type="text"
+          id="nome"
+          formControlName="nome"
+          class="form-control"
+          [class.error]="isFieldInvalid('nome')"
+          placeholder="Digite o nome completo"
+        />
+        <div class="error-message" *ngIf="isFieldInvalid('nome')">
+          {{ getErrorMessage("nome") }}
+        </div>
+      </div>
+
+      <!-- Telefone -->
+      <div class="form-group">
+        <label for="telefone">Telefone *</label>
+        <input
+          type="text"
+          id="telefone"
+          formControlName="telefone"
+          class="form-control"
+          [class.error]="isFieldInvalid('telefone')"
+          placeholder="(00) 00000-0000"
+          maxlength="15"
+          (input)="onTelefoneChange($event)"
+        />
+        <div class="error-message" *ngIf="isFieldInvalid('telefone')">
+          {{ getErrorMessage("telefone") }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Endereço -->
+    <div class="form-section">
+      <h3>Endereço</h3>
+
+      <div class="form-row">
+        <!-- CEP -->
+        <div class="form-group">
+          <label for="cep">CEP *</label>
+          <input
+            type="text"
+            id="cep"
+            formControlName="cep"
+            class="form-control"
+            [class.error]="isFieldInvalid('cep')"
+            placeholder="00000-000"
+            maxlength="9"
+            (input)="onCepChange($event)"
+          />
+          <div class="error-message" *ngIf="isFieldInvalid('cep')">
+            {{ getErrorMessage("cep") }}
+          </div>
+        </div>
+
+        <!-- Estado -->
+        <div class="form-group">
+          <label for="estado">Estado *</label>
+          <select
+            id="estado"
+            formControlName="estado"
+            class="form-control"
+            [class.error]="isFieldInvalid('estado')"
+          >
+            <option value="">Selecione</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
+          <div class="error-message" *ngIf="isFieldInvalid('estado')">
+            {{ getErrorMessage("estado") }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Endereço -->
+      <div class="form-group">
+        <label for="endereco">Endereço *</label>
+        <input
+          type="text"
+          id="endereco"
+          formControlName="endereco"
+          class="form-control"
+          [class.error]="isFieldInvalid('endereco')"
+          placeholder="Digite o endereço completo"
+        />
+        <div class="error-message" *ngIf="isFieldInvalid('endereco')">
+          {{ getErrorMessage("endereco") }}
+        </div>
+      </div>
+
+      <div class="form-row">
+        <!-- Bairro -->
+        <div class="form-group">
+          <label for="bairro">Bairro *</label>
+          <input
+            type="text"
+            id="bairro"
+            formControlName="bairro"
+            class="form-control"
+            [class.error]="isFieldInvalid('bairro')"
+            placeholder="Digite o bairro"
+          />
+          <div class="error-message" *ngIf="isFieldInvalid('bairro')">
+            {{ getErrorMessage("bairro") }}
+          </div>
+        </div>
+
+        <!-- Cidade -->
+        <div class="form-group">
+          <label for="cidade">Cidade *</label>
+          <input
+            type="text"
+            id="cidade"
+            formControlName="cidade"
+            class="form-control"
+            [class.error]="isFieldInvalid('cidade')"
+            placeholder="Digite a cidade"
+          />
+          <div class="error-message" *ngIf="isFieldInvalid('cidade')">
+            {{ getErrorMessage("cidade") }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botões -->
+    <div class="form-actions">
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">
+        <i class="fas fa-times"></i>
+        Cancelar
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="clienteForm.invalid"
+      >
+        <i class="fas fa-save"></i>
+        {{ isEdicao ? "Atualizar Dados" : "Salvar Dados" }}
+      </button>
+    </div>
+  </form>
+</div>

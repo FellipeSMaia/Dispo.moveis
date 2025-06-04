@@ -1,0 +1,161 @@
+// Loading
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--ion-color-medium);
+
+  ion-spinner {
+    margin-bottom: 16px;
+  }
+}
+
+// Estado vazio
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  min-height: 400px;
+
+  .empty-icon {
+    font-size: 80px;
+    color: var(--ion-color-medium);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: var(--ion-color-dark);
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: var(--ion-color-medium);
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+
+  .cadastro-btn {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+// Informações do cliente
+.cliente-info {
+  padding: 0 16px 20px;
+}
+
+// Header do perfil
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--ion-color-primary),
+    var(--ion-color-primary-shade)
+  );
+  color: white;
+  margin: 0 -16px 20px;
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+
+    .avatar-icon {
+      font-size: 40px;
+      color: white;
+    }
+  }
+
+  h2 {
+    margin: 0 0 8px;
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.9em;
+  }
+}
+
+// Cards
+ion-card {
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  ion-card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1em;
+
+    ion-icon {
+      color: var(--ion-color-primary);
+    }
+  }
+}
+
+// Items do card
+ion-item {
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  ion-label {
+    h3 {
+      font-size: 0.85em;
+      font-weight: 600;
+      color: var(--ion-color-medium);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      font-size: 1em;
+      color: var(--ion-color-dark);
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+}
+
+// Botão de edição
+.edit-btn {
+  margin-top: 20px;
+  --border-radius: 8px;
+}
+
+// Responsividade
+@media (min-width: 768px) {
+  .cliente-info {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .empty-state {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
